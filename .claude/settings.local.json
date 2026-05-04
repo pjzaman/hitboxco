@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(extract-text docs/hardening-scaffold.docx)",
+      "Bash(python /c/Users/Operations/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/88d75e46-63ce-4bef-ba79-13d3f41d2ae3/0a7c7886-8a98-4f5f-9c27-4c164c054b0d/skills/docx/scripts/office/unpack.py docs/hardening-scaffold.docx /tmp/hardening-unpacked)",
+      "Bash(python -c ' *)",
+      "Read(//tmp/**)",
+      "Bash(firebase functions:list --project sonic-beats-x)",
+      "Bash(firebase deploy *)",
+      "Bash(flutter analyze *)",
+      "Bash(tasklist)",
+      "Bash(flutter clean *)",
+      "Bash(./gradlew tasks *)"
+    ]
+  }
+}

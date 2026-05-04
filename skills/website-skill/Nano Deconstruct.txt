@@ -1,0 +1,56 @@
+CORE DESCRIPTION Produce a deconstructed engineering visualization of the [PRODUCT TYPE – e.g. espresso machine, hydraulic pump, vape device, smart water bottle]. Every primary sub-assembly and individual component must be meticulously detached and hovering along its precise mechanical assembly axis against a profound studio backdrop.
+
+Crucially, if the product contains or processes fluid, that liquid volume must be explosively arrested in mid-air. It should not be a solid block, but fragmented into realistic droplets, globules, aerosols, and ligaments that trace its intended flow path through the device's plumbing, reservoirs, or nozzles.
+
+Display the inner mechanics clearly, including [KEY INTERNAL PARTS – e.g. BLDC motor, Li-ion battery pack, ceramic heating element, manifold, complex circuitry, gaskets], showing fine-milled textures that convey artisan quality.
+
+VISUAL STYLE & REALISM
+
+Hyper-photorealistic rendering: Push beyond standard CGI; materials must have microscopic fidelity (e.g., slight machining marks on aluminum, realistic grain on injection-molded plastics, thermal paste traces on heat sinks).
+
+Liquid Dynamics: Fluids must exhibit accurate surface tension (spherical droplets), viscosity, and light interaction (refraction through clear liquids, subsurface scattering in opaque liquids like milk or oil). If applicable, include micro-details like steam plumes or condensation mist.
+
+Dramatic, Filmic Illumination: High-contrast studio lighting. Rim lights must catch the edges of metal parts and back-light the suspended liquid droplets to make them sparkle.
+
+Razor-sharp definition: Zero motion blur. This is a frozen moment of high-speed explosive action.
+
+COMPOSITION & STRUCTURE
+
+Logical Deconstruction: The explosion must adhere to engineering reality. Parts shouldn't just randomly float; screws should align with their threads, PCBs should float just above their mounting standoffs, and stator/rotor assemblies should remain grouped but separated.
+
+Fluid Placement: Liquids are suspended exactly where they would exist during operation—inside tubes, mid-spray from a nozzle, or resting in a tank bed—now exploded outward.
+
+Defined Axis: Elements are arranged along a strong central symmetry or flow line.
+
+
+Instant Recognition: despite the deconstruction, the collective shape must instantly scan as [PRODUCT NAME].
+
+BACKGROUND
+
+
+
+
+
+Unblemished solid [BACKGROUND COLOR – e.g. Deep Onyx (#0A0A0A), Dark Slate Grey].
+
+
+
+Absolute zero gradients, textures, or context. Designed for effortless alpha masking.
+
+RULES / CONSTRAINTS
+
+
+
+
+
+Physical Accuracy: Do not warp dimensions. Maintain realistic assembly physics (objects shouldn't clip through each other).
+
+
+
+No Overlay Elements: No tags, text, UI, charts, or pointers.
+
+
+
+Material Integrity: Rubber gaskets should look like rubber, copper coils like copper, ceramic like ceramic.
+
+DESIRED OUTPUT EXPRESSION A maximum-fidelity still frame resembling a top-tier commercial finale. It should express: "This product is an engineered masterpiece of calibrated components and precise fluid control."

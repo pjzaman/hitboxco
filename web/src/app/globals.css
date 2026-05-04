@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* =============================================================
+   Kinetic Etherealism — Hitbox Web Design System
+   Dark theme is the signature surface. Light theme inverts.
+   ============================================================= */
+
+:root {
+  /* Surfaces (tonal layering — no 1px borders, no drop shadows) */
+  --surface-0: #0d1117;          /* base — deepest indigo */
+  --surface-1: #131a23;          /* card resting */
+  --surface-2: #1a2230;          /* card raised */
+  --surface-3: #232c3d;          /* hover */
+  --surface-glass: rgba(19, 26, 35, 0.55);
+
+  /* Brand palette */
+  --primary: #7dd8ff;            /* electric aqua */
+  --primary-deep: #4cb9e8;
+  --secondary: #80deea;          /* cool teal */
+  --tertiary: #ffafd7;            /* kinetic rose */
+  --tertiary-deep: #d96fa6;
+
+  /* Foregrounds */
+  --fg-strong: #f5f8ff;
+  --fg-default: #c8d1de;
+  --fg-muted: #8893a4;
+  --fg-faint: #5c6675;
+
+  /* Borderless accents (used as glow/divider hints) */
+  --hairline: rgba(125, 216, 255, 0.08);
+
+  /* Rarity */
+  --rarity-common: #6b7a8a;
+  --rarity-uncommon: #80deea;
+  --rarity-rare: #7dd8ff;
+  --rarity-epic: #4cb9e8;
+  --rarity-legendary: #ffafd7;
+  --rarity-exclusive: #d96fa6;
+
+  /* Radii */
+  --radius-card: 24px;
+  --radius-pill: 9999px;
+}
+
+@theme inline {
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-glass: var(--surface-glass);
+
+  --color-primary: var(--primary);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-deep: var(--tertiary-deep);
+
+  --color-fg-strong: var(--fg-strong);
+  --color-fg: var(--fg-default);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-faint: var(--fg-faint);
+
+  --color-hairline: var(--hairline);
+
+  --color-rarity-common: var(--rarity-common);
+  --color-rarity-uncommon: var(--rarity-uncommon);
+  --color-rarity-rare: var(--rarity-rare);
+  --color-rarity-epic: var(--rarity-epic);
+  --color-rarity-legendary: var(--rarity-legendary);
+  --color-rarity-exclusive: var(--rarity-exclusive);
+
+  --radius-card: var(--radius-card);
+  --radius-pill: var(--radius-pill);
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+html, body {
+  background: var(--surface-0);
+  color: var(--fg-default);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ambient glow utility — soft halo around brand surfaces */
+.glow-primary {
+  box-shadow:
+    0 0 0 1px var(--hairline),
+    0 0 32px -8px rgba(125, 216, 255, 0.25),
+    0 0 80px -20px rgba(125, 216, 255, 0.18);
+}
+
+.glow-tertiary {
+  box-shadow:
+    0 0 0 1px rgba(255, 175, 215, 0.10),
+    0 0 32px -8px rgba(255, 175, 215, 0.25),
+    0 0 80px -20px rgba(255, 175, 215, 0.18);
+}
+
+/* Glassmorphism — cards, nav, sheets */
+.glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--hairline);
+}
+
+/* Animated gradient text — for hero / brand moments */
+.gradient-text {
+  background: linear-gradient(
+    100deg,
+    var(--primary) 0%,
+    var(--secondary) 35%,
+    var(--tertiary) 70%,
+    var(--primary) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 8s ease infinite;
+}
+
+@keyframes gradient-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle ambient backdrop for hero sections */
+.ambient-backdrop {
+  position: relative;
+  isolation: isolate;
+}
+.ambient-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 60%;
+  background:
+    radial-gradient(60% 50% at 20% 0%, rgba(125, 216, 255, 0.15), transparent 70%),
+    radial-gradient(50% 50% at 80% 0%, rgba(255, 175, 215, 0.10), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Scrollbar — keep it on-brand */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--surface-0); }
+::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--surface-3); }
+
+/* Selection */
+::selection {
+  background: rgba(125, 216, 255, 0.25);
+  color: var(--fg-strong);
+}

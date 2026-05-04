@@ -1,0 +1,39 @@
+{
+  "name": "hitbox-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "next": "15.5.15",
+    "firebase": "^11.10.0",
+    "react-firebase-hooks": "^5.1.1",
+    "@tanstack/react-query": "^5.62.0",
+    "framer-motion": "^11.18.0",
+    "lucide-react": "^0.469.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0",
+    "class-variance-authority": "^0.7.1",
+    "zod": "^3.24.1",
+    "react-hook-form": "^7.54.0",
+    "@hookform/resolvers": "^3.10.0"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.15",
+    "@eslint/eslintrc": "^3"
+  }
+}

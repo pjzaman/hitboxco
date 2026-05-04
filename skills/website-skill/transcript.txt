@@ -1,0 +1,334 @@
+How I VibeCode Beautiful $5,000 Animated Websites (AntiGravity)
+https://www.youtube.com/watch?v=VBvxHIkvjeo
+
+[0:00] Anti-gravity just change everything that
+[0:02] you know about building websites. And if
+[0:04] you use it correctly, you can build
+[0:06] beautiful, stunning websites that turn
+[0:07] viewers into buyers with no coding
+[0:09] experience. I have sold websites to
+[0:12] clients for over $1,000. And in this
+[0:14] video, I'll show you how to build these
+[0:16] beautiful websites from scratch only
+[0:18] using anti-gravity and other free tools.
+[0:21] So, let's get started. So, first we got
+[0:23] to start off with the idea. For this
+[0:26] example, I will create a matcha website.
+[0:28] And we're going to start by getting an
+[0:31] image for matcha coffee. So to do that,
+[0:33] we have to go to the Google Gemini and
+[0:36] let's just give it a simple prompt. I
+[0:39] need an image of iced matcha coffee
+[0:46] cup.
+[0:48] Take away with no lid and straw.
+[0:55] Make it realistic.
+[1:00] and super tasty. So basically we want a
+[1:05] cup of matcha coffee super realistic and
+[1:07] tasty create images and let's just run
+[1:09] it through Gemini free. So it will give
+[1:11] us an example an image we can use later
+[1:14] to create those effects. So let's just
+[1:17] wait a second. It give us an image but
+[1:20] we want the cup
+[1:23] has to be in center with black
+[1:28] background.
+[1:31] Basically the cup has to be in center
+[1:32] with a black background. So now we got
+[1:35] this image. I also want to make some
+[1:37] changes. Remove the mint on top and make
+[1:42] cup larger and image vertical. So
+[1:47] basically remove the mint on the top,
+[1:49] make the cup larger and image vertical.
+[1:54] And so we got a perfect image. So let's
+[1:57] just download this image right here. I
+[1:59] do like it a lot. And once we downloaded
+[2:02] it, we have to do the next step which is
+[2:05] going to my school community. This is a
+[2:07] free community. The link is in this
+[2:09] video description. And now we have to
+[2:11] copy the end frame script. So let's just
+[2:14] copy this prompt for the end frame. I
+[2:16] have it in my free school group. And now
+[2:18] we're going to go to the Google whisk.
+[2:20] Basically Google whisk is a free Google
+[2:22] app where you can create and generate
+[2:25] different kind of photos. So in this
+[2:27] example, we're going to generate the
+[2:29] back end the back photo of the like the
+[2:32] end result of our coffee. So let's just
+[2:34] insert our primary image. It will
+[2:37] analyze it. And now we're going to
+[2:39] insert the prompt. But before we insert
+[2:43] it, it's just a general prompt. So we
+[2:45] have to go back to Google Gemini and I
+[2:48] just asked the Google Gemini to adapt
+[2:50] this prompt to my image. And basically
+[2:53] it adapted this prompt. So now it's only
+[2:56] for this coffee and not a generic
+[2:58] without these product names and other
+[3:00] things. So I just asked to adapt this
+[3:02] prompt to my image. Please just fill
+[3:04] blanks and don't generate any images. So
+[3:06] when you got a fill script, you're going
+[3:08] to go back to the Google whisk and
+[3:10] upload your end result. So it's going to
+[3:13] be the adapted as you can see eyes dirty
+[3:16] matcha with maximum visual impact. So
+[3:18] insert the subject, insert this new
+[3:20] script. And now let's just click on
+[3:22] generate. So you should have a final
+[3:26] photo for your coffee. Everything should
+[3:28] be spilled out or like some kind of
+[3:31] drops, ice cubes in the air. like it
+[3:33] should be a cool result. As you can see,
+[3:36] we got these images, but they look very
+[3:39] bad. So, let's just try one more time.
+[3:41] And if you don't get the results you
+[3:43] need, you can always adapt the script
+[3:45] because sometimes the whisk doesn't
+[3:48] recognize what do you actually want. As
+[3:50] you can see, it rips everything apart.
+[3:52] So, in that case, I'm just going to go
+[3:54] back to the Google Gemini. And let's
+[3:57] just say the prompt
+[4:01] rips
+[4:03] the whole
+[4:05] cup apart.
+[4:09] Let's just say I want the coffee to stay
+[4:14] the same. Just add flying ice
+[4:21] cubes and
+[4:24] just some kind of liquid shots
+[4:29] in the air. I hope this will understand
+[4:32] us now. So, we just don't want to rip
+[4:34] the coffee cup apart. We just want the
+[4:36] coffee to stay as it was. and add some
+[4:38] flying ice cubes for example inside the
+[4:41] air or some kind of liquid shots like
+[4:44] liquid dripping liquid dripping from the
+[4:46] sky. Like there is just ton of ways to
+[4:49] create it. So let's just try. So it got
+[4:52] us a completely new prompt. So let's
+[4:55] just copy it and go back to the Google
+[4:57] whisk. What we're going to do now is
+[5:00] remove all of the previous prompt and
+[5:02] insert our new prompt. So let's take a
+[5:05] look if it understands us better now.
+[5:08] I think it should be good. Just wait a
+[5:11] second.
+[5:14] And as you can see, we got a new level
+[5:16] of effects, but they are quite not the
+[5:21] same. Like I wanted something more
+[5:23] extraordinary. As you can see, we got a
+[5:25] flying ice cubes, which is nice. We got
+[5:28] all of these splashing liquid effects,
+[5:30] but we want to add one more thing. So,
+[5:32] what we can do is click on this photo.
+[5:34] And now, let's just say one simple
+[5:35] thing. add liquid
+[5:39] drops from the
+[5:42] sky and let's click on generate. So I
+[5:46] hope that we will get some kind of
+[5:48] liquid going inside the coffee from the
+[5:50] sky
+[5:52] and then we should be good and move to
+[5:54] the next part.
+[5:57] Okay, we got these but they are not
+[5:59] quite it. So let's just remove them
+[6:01] again. add liquid flying into the drink
+[6:07] and splashing.
+[6:10] So hopefully this will be better now.
+[6:12] Let's wait a second. And we got a
+[6:15] perfect result. That's actually exactly
+[6:17] what I wanted. So we have this contrast
+[6:20] of coffee and matcha tea pouring inside
+[6:23] this cup. We got these particles. So
+[6:27] choose the one you like. For me, they
+[6:29] look pretty similar. I just think this
+[6:32] version is a bit crispier. So, let's
+[6:34] just download it. So, now when you have
+[6:36] downloaded, you have two of these
+[6:38] images. What we're going to do next is
+[6:40] go to the Google Flow. So, Google Flow
+[6:42] is also a free app you can use and it
+[6:44] creates an amazing videos. So, inside
+[6:47] the Google Flow, as you can see, I have
+[6:49] my old project, but we're going to start
+[6:51] off with a new project. Now, first
+[6:54] things first, choose not a text to
+[6:56] video, but choose a frame to video. And
+[6:58] next thing is check if you have the
+[7:00] VO3.1 quality on here and not some kind
+[7:04] of V2 fast or V3 to or VF 3.1 fast. So
+[7:09] choose the quality one. And now let's
+[7:11] insert our frames. So this is the
+[7:14] starting frame. Just crop and save. And
+[7:17] now let's insert our end frame.
+[7:20] Just crop and save.
+[7:24] And that should be good now. So once you
+[7:27] have these inserted also go back to my
+[7:30] free school group. And now let's go down
+[7:33] and let's search for the Google flow. So
+[7:36] now let's copy the Google flow script.
+[7:40] And now let's paste it inside the Google
+[7:42] flow. So once you copy the script just
+[7:46] paste it
+[7:48] and just generate it. So this will
+[7:51] create a video for you which will be
+[7:54] used as an effect. We will convert it on
+[7:57] the ease GIF and we will have like 120
+[8:01] photo photo frames of this animation
+[8:03] that we will also later insert insert
+[8:06] into anti-gravity
+[8:08] and we will create a website inside
+[8:10] here. It's super easy and I'm also going
+[8:13] to show you everything step by step so
+[8:15] even not technical people will
+[8:16] understand everything correctly. And the
+[8:20] flow is done. And let's take a look at
+[8:22] the video we just have gotten. So as you
+[8:25] can see the opening frame. And now the
+[8:28] ice cubes and everything is pouring in
+[8:30] and splashing a total destruction like
+[8:33] we wanted. So if we like this video, we
+[8:36] just going to download it. And as you
+[8:37] can see, we got the options. So always
+[8:39] download as upscale version. So it will
+[8:42] take like 1 minute, but you will get the
+[8:44] video inside your computer. And with
+[8:46] that video, we're going to convert it to
+[8:48] the images. So let's wait a bit. So the
+[8:51] video is downloaded. And now the next
+[8:54] step is to go to ESG. So once inside
+[8:57] ESGF, we have all of these options. So
+[9:00] don't get lost. Click on video to GIF,
+[9:04] video to J.PG converter. And now we have
+[9:07] to upload our just downloaded video.
+[9:10] So let's just upload it and just click
+[9:13] this button. So now when it uploads, we
+[9:17] will have to choose some options. And I
+[9:20] will increase the frame rate for the
+[9:22] video. Let's wait a second.
+[9:27] And it's done. And here we go. So for
+[9:30] example, now we have to choose if we
+[9:32] want the start time. So if you want to
+[9:35] keep these opening animations, it's
+[9:37] fine. But I want my video to start from
+[9:39] 2 seconds. So basically 2 seconds mark
+[9:42] is this. So it will instantly start with
+[9:45] this effect right here and it's going to
+[9:49] end at 8 seconds. Now the frame rates we
+[9:52] have to increase them. I will choose
+[9:56] like 30 but let's just go with 29 and
+[10:00] click this button convertg.
+[10:04] Now as you can see we got a ton of new
+[10:07] images with every frame in this video.
+[10:12] It's super cool. And let's wait a bit.
+[10:16] I'm done.
+[10:18] And we just got here. So now we're going
+[10:21] to download these frames as a zip
+[10:23] folder. Just click this button. Super
+[10:26] easy. And we will have just all of these
+[10:29] images zipped inside of it. So I just
+[10:33] downloaded the zip folder, the matches
+[10:35] zip with all of the frames. As you can
+[10:38] see, we got 168 in total. And once we
+[10:42] have these, let's just close this for
+[10:45] now.
+[10:50] And let's go back to our community.
+[10:53] And now we're going to copy the website
+[10:56] prompt. So now let's just copy it.
+[11:02] And now let's go back to the Google
+[11:04] Gemini. inside Gemini. Let's just ask
+[11:08] adapt this web gen prompt to my coffee
+[11:16] and animation.
+[11:20] So, let's insert this
+[11:23] and let's wait a bit. And the AI just
+[11:27] generated our prompt. So, let's just
+[11:31] copy all of this.
+[11:34] Let's scroll it as it's writing all of
+[11:37] this and
+[11:40] boom. So how now we got it. So the next
+[11:44] step would be to insert our matcha
+[11:46] folder. So let's open the folder and
+[11:49] let's select the matcha zip folder.
+[11:52] So now we got all of these frames inside
+[11:55] the anti-gravity.
+[11:58] And now we're going to give it a prompt.
+[12:00] So
+[12:02] now in this section just insert the new
+[12:05] code. Select the Gemini 3 Pro and select
+[12:10] planning. Not fast. That's it. Just
+[12:12] click on generate. And now we're going
+[12:15] to wait while the AI is generating the
+[12:17] website for us. And it should take like
+[12:20] 30 to 40 or even few minutes. But that's
+[12:24] like super fast because usually web
+[12:27] development takes a lot longer. So I'm
+[12:30] going to be back once it's generated and
+[12:32] I will show you how we can actually host
+[12:34] it as a static file inside the netifi
+[12:37] completely for free. So anti-gravity
+[12:39] just finished our website and if we
+[12:41] refresh the page we can see that we got
+[12:44] this cup the animation is working. We
+[12:47] got all of the website done and it looks
+[12:51] super cool. Of course, the visuals are
+[12:54] not super crisp, but we can make sure
+[12:56] it's better when we add more frames. But
+[12:59] in general, I do think this one looks
+[13:01] nice. As you can see, it's not easy to
+[13:04] create these effects when when
+[13:06] programming. So, it's a good result for
+[13:08] this website. So, now once we have it,
+[13:11] how can we host it online? So, I'm just
+[13:14] going to give it a prompt. So let's just
+[13:16] say I want to host it on netifi
+[13:22] as static web
+[13:26] give me code. So basically I want to
+[13:28] host it on netifi static web give me
+[13:30] code. It will give us a new folder
+[13:33] called for example out and we will just
+[13:35] paste that folder inside the netifi drop
+[13:38] and it will be hosted completely for
+[13:40] free.
+[13:41] So it's done and we got a new folder
+[13:44] called out as you can see right here. So
+[13:47] now what we got to do is go on Google
+[13:50] and open up the netifi. So once inside
+[13:53] the netifi we got this out folder as you
+[13:57] can see right here. So what we're going
+[13:59] to do with it is find in folder.
+[14:02] So it's in matcha app. So now let's
+[14:04] search for it.
+[14:14] And we got it. So, it's the out folder.
+[14:17] So, when we have this out folder, let's
+[14:19] go back to Google. And now, let's just
+[14:23] drop it in here. Just like this. Super
+[14:25] easy.
+[14:27] So, it's almost done, I think.
+[14:34] So, we just got it live. And as you can
+[14:37] see, we have this section domain
+[14:39] management where we can add a domain. So
+[14:42] just click on add domain. You can buy or
+[14:44] just upload your own domain. And once
+[14:46] it's done, just go to product overview.
+[14:49] So let's try and open up this new link.
+[14:53] And as you can see, we got this cup of
+[14:55] coffee with the effects going inside the
+[14:58] background. So the whole page is
+[15:01] finished. And we can clearly see that it
+[15:04] does look nice.
+[15:06] So, if you want to make these kind of
+[15:08] effects, as you can see, it's very easy
+[15:10] and you can sell these websites for a
+[15:12] ton of money. You can create all
+[15:14] different kind of animations, for
+[15:16] example, headphones, uh, splitting into
+[15:19] different parts and all of the other
+[15:21] cool things. So, the possibilities are
+[15:25] insane and it's super easy to create.
+[15:28] So, thank you guys for watching. I hope
+[15:30] you like this video. Also, if you want
+[15:32] to learn more about vibe coding these
+[15:34] school of websites, I have a free
+[15:36] community inside this video description.
