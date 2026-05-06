@@ -1,17 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  limit,
-  query,
-  where,
-} from "firebase/firestore/lite";
 import type { Metadata } from "next";
 import { getServerDb } from "@/lib/firebase/server";
 import { PublicHeader, PublicFooter } from "@/components/public/chrome";
+import { getSeasonByIdOrSlug } from "@/lib/services";
+import { formatDate } from "@/lib/types";
 
 /**
  * /season/[id] — public SEO page for a Hitbox season (Layer 4).
@@ -21,53 +14,11 @@ import { PublicHeader, PublicFooter } from "@/components/public/chrome";
  * marketing campaigns.
  */
 
-interface SeasonDoc {
-  name?: string;
-  slug?: string | null;
-  description?: string;
-  coverImageUrl?: string | null;
-  startDate?: string;
-  endDate?: string;
-  isActive?: boolean;
-}
-
-interface ResolvedSeason extends SeasonDoc {
-  id: string;
-}
-
-/**
- * Resolve a season by its doc id OR `slug` field. Same pattern as the
- * artist page — id lookup first, slug query fallback.
- */
-async function _loadSeason(idOrSlug: string): Promise<ResolvedSeason | null> {
-  try {
-    const db = getServerDb();
-    const direct = await getDoc(doc(db, "seasons", idOrSlug));
-    if (direct.exists()) {
-      return { id: direct.id, ...(direct.data() as SeasonDoc) };
-    }
-    const bySlug = await getDocs(
-      query(
-        collection(db, "seasons"),
-        where("slug", "==", idOrSlug),
-        limit(1),
-      ),
-    );
-    if (!bySlug.empty) {
-      const d = bySlug.docs[0];
-      return { id: d.id, ...(d.data() as SeasonDoc) };
-    }
-    return null;
-  } catch {
-    return null;
-  }
-}
-
 export async function generateMetadata(
   { params }: { params: Promise<{ id: string }> },
 ): Promise<Metadata> {
   const { id } = await params;
-  const season = await _loadSeason(id);
+  const season = await getSeasonByIdOrSlug(getServerDb(), id);
   if (!season) {
     return {
       title: "Season not found · Hitbox",
@@ -106,8 +57,10 @@ export default async function SeasonPage({
   params: Promise<{ id: string }>;
 }) {
   const { id: idOrSlug } = await params;
-  const season = await _loadSeason(idOrSlug);
+  const season = await getSeasonByIdOrSlug(getServerDb(), idOrSlug);
   if (!season) notFound();
+  const startLabel = formatDate(season.startDate);
+  const endLabel = formatDate(season.endDate);
   // Canonical URL uses slug if set, else doc id.
   const canonicalRef = season.slug || season.id;
 
@@ -135,9 +88,9 @@ export default async function SeasonPage({
           <h1 className="text-4xl md:text-5xl font-bold gradient-text tracking-tight">
             {season.name ?? "Season"}
           </h1>
-          {(season.startDate || season.endDate) && (
+          {(startLabel || endLabel) && (
             <div className="text-sm text-fg-muted">
-              {season.startDate} {season.endDate ? `– ${season.endDate}` : null}
+              {startLabel} {endLabel ? `– ${endLabel}` : null}
             </div>
           )}
         </div>

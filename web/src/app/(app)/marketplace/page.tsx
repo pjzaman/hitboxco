@@ -1,28 +1,11 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { collection, getDocs, limit, orderBy, query, where } from "firebase/firestore";
-import { db } from "@/lib/firebase/client";
-import { Collections } from "@/lib/firebase/collections";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Button } from "@/components/ui/button";
 import { formatCurrency, cn } from "@/lib/utils";
 import { Filter, Search } from "lucide-react";
-
-interface ListingDoc {
-  id: string;
-  sellerId?: string;
-  sellerName?: string;
-  collectibleTitle?: string;
-  artistName?: string;
-  imageUrl?: string;
-  rarity?: string;
-  listingType?: string;
-  askingPrice?: number;
-  currency?: string;
-  editionNumber?: number;
-  totalEditions?: number;
-}
+import { getActiveListings } from "@/lib/services";
 
 const rarityColor: Record<string, string> = {
   common: "text-rarity-common",
@@ -36,16 +19,7 @@ const rarityColor: Record<string, string> = {
 export default function MarketplacePage() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["marketplace-listings"],
-    queryFn: async () => {
-      const q = query(
-        collection(db, Collections.listings),
-        where("status", "==", "active"),
-        orderBy("createdAt", "desc"),
-        limit(24),
-      );
-      const snap = await getDocs(q);
-      return snap.docs.map((d) => ({ id: d.id, ...d.data() } as ListingDoc));
-    },
+    queryFn: () => getActiveListings(24),
   });
 
   return (

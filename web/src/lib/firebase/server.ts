@@ -1,9 +1,14 @@
 /**
  * Firestore client for Next.js server components (Layer 4 — public SEO pages).
  *
- * Uses `firebase/firestore/lite` — same Firestore wire protocol but no
- * realtime listeners and a much smaller bundle, suitable for server
- * rendering where we just need one-shot reads.
+ * Uses the full `firebase/firestore` SDK (same as the browser client) on a
+ * separate Firebase app instance. We previously used `firebase/firestore/lite`
+ * here, but mixing both SDKs in the same Next.js bundle caused a
+ * known SDK-collision class of bug — the lite SDK's internal serializer
+ * disagrees with the full SDK's Timestamp/DocumentReference types when a
+ * doc reference flows from one half of the app to the other. Standardizing
+ * on the full SDK across server+client is what the hardening doc calls
+ * for. The bundle cost is acceptable; reads here are still one-shot.
  *
  * The reads here go to Firestore as anonymous, so the collections
  * accessed (artists, collectibles, seasons) MUST have
@@ -12,10 +17,7 @@
  */
 
 import { initializeApp, getApps, type FirebaseApp } from "firebase/app";
-import {
-  getFirestore as getLiteFirestore,
-  type Firestore as LiteFirestore,
-} from "firebase/firestore/lite";
+import { getFirestore, type Firestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
@@ -37,10 +39,10 @@ function _getServerApp(): FirebaseApp {
   return initializeApp(firebaseConfig, SERVER_APP_NAME);
 }
 
-let _dbInstance: LiteFirestore | null = null;
+let _dbInstance: Firestore | null = null;
 
-export function getServerDb(): LiteFirestore {
+export function getServerDb(): Firestore {
   if (_dbInstance) return _dbInstance;
-  _dbInstance = getLiteFirestore(_getServerApp());
+  _dbInstance = getFirestore(_getServerApp());
   return _dbInstance;
 }

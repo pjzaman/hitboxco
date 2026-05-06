@@ -1,115 +1,30 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  limit,
-  orderBy,
-  query,
-  where,
-} from "firebase/firestore/lite";
 import type { Metadata } from "next";
 import { getServerDb } from "@/lib/firebase/server";
 import { PublicHeader, PublicFooter } from "@/components/public/chrome";
 import { FollowButton } from "@/components/public/follow-button";
+import {
+  getArtistByIdOrSlug,
+  getActiveDropsByArtist,
+} from "@/lib/services";
 
 /**
  * /artist/[id] — public SEO page (Layer 4).
  *
- * Server-rendered with Firestore Lite reads against `artists/{id}` and
- * the artist's active collectibles. Sets per-page metadata (title,
- * description, Open Graph, Twitter card) and JSON-LD MusicGroup
- * structured data so search engines and link previewers render it well.
+ * Server-rendered against `artists/{id}` and the artist's active
+ * collectibles. Sets per-page metadata (title, description, Open
+ * Graph, Twitter card) and JSON-LD MusicGroup structured data so
+ * search engines and link previewers render it well.
  *
  * Public rules required: `artists` and `collectibles` allow read: true.
  */
-
-interface ArtistDoc {
-  name?: string;
-  slug?: string | null;
-  bio?: string;
-  profileImageUrl?: string | null;
-  coverImageUrl?: string | null;
-  isVerified?: boolean;
-  websiteUrl?: string | null;
-  spotifyUrl?: string | null;
-  appleMusicUrl?: string | null;
-}
-
-// Resolved artist: the doc data plus the doc id, since URLs may use
-// either the id or a slug and downstream code needs the canonical id.
-interface ResolvedArtist extends ArtistDoc {
-  id: string;
-}
-
-interface CollectibleDocData {
-  name?: string;
-  imageUrl?: string | null;
-  rarity?: string;
-  price?: number;
-  currency?: string;
-  releaseDate?: string;
-}
-
-type DropRow = CollectibleDocData & { id: string };
-
-/**
- * Resolve an artist by either its Firestore doc id OR its `slug` field.
- * Doc-id lookup runs first (cheaper, single point read); slug query is
- * the fallback. Returns null if neither matches.
- */
-async function _loadArtist(idOrSlug: string): Promise<ResolvedArtist | null> {
-  try {
-    const db = getServerDb();
-    const direct = await getDoc(doc(db, "artists", idOrSlug));
-    if (direct.exists()) {
-      return { id: direct.id, ...(direct.data() as ArtistDoc) };
-    }
-    const bySlug = await getDocs(
-      query(
-        collection(db, "artists"),
-        where("slug", "==", idOrSlug),
-        limit(1),
-      ),
-    );
-    if (!bySlug.empty) {
-      const d = bySlug.docs[0];
-      return { id: d.id, ...(d.data() as ArtistDoc) };
-    }
-    return null;
-  } catch {
-    return null;
-  }
-}
-
-async function _loadDrops(artistId: string): Promise<DropRow[]> {
-  try {
-    const db = getServerDb();
-    const snap = await getDocs(
-      query(
-        collection(db, "collectibles"),
-        where("artistId", "==", artistId),
-        where("isActive", "==", true),
-        orderBy("releaseDate", "desc"),
-        limit(12),
-      ),
-    );
-    return snap.docs.map((d) => ({
-      ...(d.data() as CollectibleDocData),
-      id: d.id,
-    }));
-  } catch {
-    return [];
-  }
-}
 
 export async function generateMetadata(
   { params }: { params: Promise<{ id: string }> },
 ): Promise<Metadata> {
   const { id } = await params;
-  const artist = await _loadArtist(id);
+  const artist = await getArtistByIdOrSlug(getServerDb(), id);
   if (!artist) {
     return {
       title: "Artist not found · Hitbox",
@@ -150,11 +65,12 @@ export default async function ArtistPage({
   params: Promise<{ id: string }>;
 }) {
   const { id: idOrSlug } = await params;
-  const artist = await _loadArtist(idOrSlug);
+  const db = getServerDb();
+  const artist = await getArtistByIdOrSlug(db, idOrSlug);
   if (!artist) notFound();
   // Drops query needs the canonical artist doc id; the URL might've
   // arrived as a slug.
-  const drops = await _loadDrops(artist.id);
+  const drops = await getActiveDropsByArtist(db, artist.id, 12);
 
   const jsonLd = {
     "@context": "https://schema.org",

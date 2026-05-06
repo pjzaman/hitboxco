@@ -2,23 +2,9 @@
 
 import { useAuth } from "@/contexts/auth-context";
 import { useQuery } from "@tanstack/react-query";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "@/lib/firebase/client";
-import { Collections } from "@/lib/firebase/collections";
 import { GlassCard } from "@/components/ui/glass-card";
 import { cn } from "@/lib/utils";
-
-interface InstanceDoc {
-  id: string;
-  collectibleId?: string;
-  collectibleTitle?: string;
-  artistId?: string;
-  artistName?: string;
-  editionNumber?: number;
-  totalEditions?: number;
-  status?: string;
-  rarity?: string;
-}
+import { getInstancesForUser } from "@/lib/services";
 
 const rarityColor: Record<string, string> = {
   common: "text-rarity-common",
@@ -35,14 +21,7 @@ export default function PortfolioPage() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["portfolio-instances", user?.uid],
     enabled: !!user?.uid,
-    queryFn: async () => {
-      const q = query(
-        collection(db, Collections.collectibleInstances),
-        where("claimedByUserId", "==", user!.uid),
-      );
-      const snap = await getDocs(q);
-      return snap.docs.map((d) => ({ id: d.id, ...d.data() } as InstanceDoc));
-    },
+    queryFn: () => getInstancesForUser(user!.uid),
   });
 
   return (
