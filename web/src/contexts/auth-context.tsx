@@ -12,6 +12,7 @@ import {
   type User,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase/client";
+import { ensureUserDocument } from "@/lib/services/user-service";
 
 interface AuthContextValue {
   user: User | null;
@@ -32,12 +33,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const unsub = onAuthStateChanged(auth, (u) => {
       setUser(u);
       setLoading(false);
+      // Backfill `users/{uid}` docs for accounts that signed in before
+      // this hook existed (e.g. Console-created users, or accounts
+      // created when the doc-write path wasn't on the web client).
+      // ensureUserDocument is a no-op when the doc already exists.
+      if (u) void ensureUserDocument(u);
     });
     return () => unsub();
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    await signInWithEmailAndPassword(auth, email, password);
+    const cred = await signInWithEmailAndPassword(auth, email, password);
+    await ensureUserDocument(cred.user);
   };
 
   const signUp = async (email: string, password: string, displayName?: string) => {
@@ -45,11 +52,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (displayName) {
       await updateProfile(cred.user, { displayName });
     }
+    // ensureUserDocument seeds defaults from the Auth profile, so
+    // updateProfile must run first to make displayName available.
+    await ensureUserDocument(cred.user);
   };
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
+    const cred = await signInWithPopup(auth, provider);
+    await ensureUserDocument(cred.user);
   };
 
   const signOut = async () => {

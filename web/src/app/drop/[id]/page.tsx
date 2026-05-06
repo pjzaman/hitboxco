@@ -1,55 +1,26 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { doc, getDoc } from "firebase/firestore/lite";
 import type { Metadata } from "next";
 import { getServerDb } from "@/lib/firebase/server";
 import { PublicHeader, PublicFooter } from "@/components/public/chrome";
 import { YouTubeEmbed } from "@/components/public/youtube-embed";
+import { getCollectible } from "@/lib/services";
+import { formatDate } from "@/lib/types";
 
 /**
  * /drop/[id] — public SEO page for a single collectible (Layer 4).
  *
- * Server-rendered with Firestore Lite reads against `collectibles/{id}`.
- * Sets per-page metadata + JSON-LD `Product` / `Offer` structured data
- * so Google Shopping, Twitter, Discord, iMessage all render rich
- * previews when the URL is shared.
+ * Server-rendered against `collectibles/{id}`. Sets per-page metadata +
+ * JSON-LD `Product` / `Offer` structured data so Google Shopping,
+ * Twitter, Discord, iMessage all render rich previews when the URL is
+ * shared.
  */
-
-interface CollectibleDoc {
-  name?: string;
-  description?: string;
-  artistId?: string;
-  artistName?: string;
-  imageUrl?: string | null;
-  videoUrl?: string | null;
-  price?: number;
-  currency?: string;
-  rarity?: string;
-  category?: string;
-  totalSupply?: number;
-  minted?: number;
-  availableForPurchase?: number;
-  releaseDate?: string;
-  endDate?: string | null;
-  isActive?: boolean;
-}
-
-async function _loadCollectible(id: string): Promise<CollectibleDoc | null> {
-  try {
-    const db = getServerDb();
-    const snap = await getDoc(doc(db, "collectibles", id));
-    if (!snap.exists()) return null;
-    return snap.data() as CollectibleDoc;
-  } catch {
-    return null;
-  }
-}
 
 export async function generateMetadata(
   { params }: { params: Promise<{ id: string }> },
 ): Promise<Metadata> {
   const { id } = await params;
-  const drop = await _loadCollectible(id);
+  const drop = await getCollectible(getServerDb(), id);
   if (!drop) {
     return {
       title: "Drop not found · Hitbox",
@@ -89,7 +60,7 @@ export default async function DropPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const drop = await _loadCollectible(id);
+  const drop = await getCollectible(getServerDb(), id);
   if (!drop) notFound();
 
   const remaining =
@@ -209,10 +180,10 @@ export default async function DropPage({
 
           <dl className="grid grid-cols-2 gap-3 pt-4 border-t border-white/5 text-sm">
             {drop.releaseDate && (
-              <DetailLine label="Released" value={drop.releaseDate} />
+              <DetailLine label="Released" value={formatDate(drop.releaseDate)} />
             )}
             {drop.endDate && (
-              <DetailLine label="Ends" value={drop.endDate} />
+              <DetailLine label="Ends" value={formatDate(drop.endDate)} />
             )}
           </dl>
         </div>
